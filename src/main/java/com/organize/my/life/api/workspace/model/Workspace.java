@@ -40,7 +40,7 @@ public class Workspace {
 
     public static String normalizeDescription(String description) {
         if (description == null || description.isBlank()) {
-            throw new IllegalArgumentException("A descrição da área de trabalho é obrigatório");
+            return null;
         }
         String normalized = description.strip();
         if (normalized.length() > 500) {
@@ -53,15 +53,11 @@ public class Workspace {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
+    public String getName() {return name;}
 
-    public String getDescription() {
-        return description;
-    }
+    public String getDescription() {return description;}
 
-    public Instant getUpdatedAt() {
-        return updatedAt;
-    }
+    public Instant getCreatedAt() {return createdAt;}
+
+    public Instant getUpdatedAt() {return updatedAt;}
 }
